@@ -7,7 +7,7 @@ fi
 
 
 if [ $# = 4 ]; then
-  docker run --name $1 -h $1 --volumes-from mysql_data --link mysql:mysql -v $4:/var/www/html/app -d -p $2:80 --privileged $3 /sbin/init
+  docker run --name $1 -h $1 --restart=unless-stopped --volumes-from mysql_data --link mysql:mysql -v $4:/var/www/html/app -d -p $2:80 --privileged $3 /sbin/init
   exit
 fi
 

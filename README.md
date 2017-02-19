@@ -17,7 +17,7 @@ $ de [name]
 ```
 
 ### docker run
-`docker run --name [name] -h [name] --volumes-from mysql_data --link mysql:mysql -v [mounting port]:/var/www/html/app -d -p [port]:80 --privileged [image] /sbin/init`
+`docker run --name [name] -h [name] --restart=unless-stopped --volumes-from mysql_data --link mysql:mysql -v [mounting port]:/var/www/html/app -d -p [port]:80 --privileged [image] /sbin/init`
 
 ```bash
 $ drun [name] [port] [image] <option>[mounting port]
